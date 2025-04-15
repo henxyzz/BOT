@@ -1,0 +1,34 @@
+name: Build and Upload node_modules
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: |
+        rm -rf node_modules package-lock.json
+        npm install
+    - name: Zip node_modules
+      run: zip -r node_modules.zip node_modules
+
+    - name: Upload node_modules to release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: node-modules-build
+        files: node_modules.zip
+      env:
+  GITHUB_TOKEN: ${{ secrets.T }}
