@@ -33,7 +33,7 @@ const spinnies = new Spinnies();
 
 const { CONNECTING } = ws
 const { chain } = lodash
-const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
+const PORT = process.env.PORT || process.env.SERVER_PORT || 8080
 
 protoType()
 serialize()
