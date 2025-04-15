@@ -1,0 +1,27 @@
+/**
+* BRAT VIDEO! 
+* Created by Kyzryzz
+> *Thanks to FgsiDev!*
+* Fomo Tiktok brat Bret brot menangis Klo nemu bot punya fitur ini😇
+*/
+
+import { sticker } from '../lib/sticker.js';
+import axios from 'axios';
+
+let Kyzz = async (m, { conn, args }) => {
+    const quo = args.length >= 1 ? args.join(" ") : m.quoted?.text || m.quoted?.caption || m.quoted?.description || null;
+
+    if (!quo) return m.reply("[❗] Input/reply teks tidak ditemukan!");
+
+    let brat = `https://fgsi-brat.hf.space/?text=${quo}&isVideo=true`;
+    
+    let crott = await sticker(null, brat, global.packname, global.author);
+    conn.sendFile(m.chat, crott, 'brat_bret_brot.webp', quo, m);
+};
+
+Kyzz.help = ['bratvid'];
+Kyzz.tags = ['tools'];
+Kyzz.command = /^(bratvid|brat2)$/i;
+Kyzz.limit = true;
+
+export default Kyzz;

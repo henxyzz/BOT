@@ -1,0 +1,22 @@
+{
+  "6287778002663@s.whatsapp.net": {
+    "rpg": {
+      "hero": null,
+      "level": 1,
+      "xp": 0,
+      "gold": 100,
+      "hp": 100,
+      "maxHp": 100,
+      "atk": 10,
+      "def": 5,
+      "skills": [],
+      "allSkills": [],
+      "dungeonWins": 0,
+      "lastRegen": 1744362096319,
+      "timezone": null,
+      "lastQuest": null,
+      "equippedWeapon": null,
+      "inventory": []
+    }
+  }
+}
